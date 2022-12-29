@@ -47,6 +47,16 @@ public class CounterController {
 
     return ApiResponse.ok(count);
   }
+  
+    /**
+   * 获取验证数据的值
+   * @return API response json
+   */
+  @GetMapping(value = "/api/verify")
+  ApiResponse getValue() {
+    logger.info("/api/verify get request");
+    return ApiResponse.ok("new api");
+  }
 
 
   /**

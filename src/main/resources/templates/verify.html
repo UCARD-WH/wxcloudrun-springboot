@@ -201,15 +201,15 @@
     <div style="text-align: center; display: flex; flex-direction: column; align-items: center; margin: 0">
       <span class="count-text">
         <span style="margin-right: 16px;">Tag UID:</span>
-        <span class="uid" text="123456789ABCDE"></span>
+        <span th:text="${uid}"></span>
       </span>
       <span class="count-text">
         <span style="margin-right: 16px;">Tag Tamper Status:</span>
-        <span class="status" text="${flag}"></span>
+        <span th:text="${flag}"></span>
       </span>
       <span class="count-text">
         <span style="margin-right: 16px;">Tag Counter:</span>
-        <span class="count-number" text="FFFFFF"></span>
+        <span th:text="${count}"></span>
       </span>
     </div>
   </div>

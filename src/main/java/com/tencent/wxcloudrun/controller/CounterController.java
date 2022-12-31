@@ -57,7 +57,7 @@ public class CounterController {
     String uid = data.substring(0,14);
     String flag = data.substring(14,15);
     String counter = data.substring(15,21);
-    return ApiResponse.ok("uid ="+uid+"\\n"+" flag ="+flag+"\\n"+" counter ="+counter);
+    return ApiResponse.ok("uid ="+uid+" flag ="+flag+" counter ="+counter);
   }
 
 

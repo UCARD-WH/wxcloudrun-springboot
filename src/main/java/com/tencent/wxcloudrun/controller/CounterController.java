@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.stereotype.Controller;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -20,7 +22,8 @@ import java.util.List;
 /**
  * counter控制器
  */
-@RestController
+//@RestController
+@Controller
 
 public class CounterController {
 
@@ -53,8 +56,9 @@ public class CounterController {
    * 获取验证数据的值
    * @return API response json
    */
-  @GetMapping(value = "/api/verify")
-  String getValue(@RequestParam String data) {
+  //@GetMapping(value = "/api/verify")
+  @RequestMapping("/api/verify")
+  public String getValue(@RequestParam String data) {
     
     String uid = data.substring(0,14);
     String flag = data.substring(14,15);

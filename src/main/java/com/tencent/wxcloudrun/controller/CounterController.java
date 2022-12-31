@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -58,11 +59,25 @@ public class CounterController {
    */
   //@GetMapping(value = "/api/verify")
   @RequestMapping("/api/verify")
-  public String getValue(@RequestParam String data) {
+  public String getValue(@RequestParam String data,Model model) {
     
     String uid = data.substring(0,14);
     String flag = data.substring(14,15);
     String counter = data.substring(15,21);
+    model.addAttribute("uid",uid);
+    if(flag.equals("x"))
+    {
+      model.addAttribute("flag","open");    
+    }
+    else if(flag.equals("y"))
+    {
+      model.addAttribute("flag","close");        
+    }
+    else
+    {
+      model.addAttribute("flag","error");     
+    }   
+    model.addAttribute("count",counter);
     
     return "verify";
     

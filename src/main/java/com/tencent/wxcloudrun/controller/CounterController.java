@@ -54,9 +54,11 @@ public class CounterController {
    */
   @GetMapping(value = "/api/verify")
   ApiResponse getValue(@RequestParam String data) {
+    
     String uid = data.substring(0,14);
     String flag = data.substring(14,15);
     String counter = data.substring(15,21);
+    
     return ApiResponse.ok("uid ="+uid+" flag ="+flag+" counter ="+counter);
   }
 

@@ -20,8 +20,7 @@ import java.util.List;
 /**
  * counter控制器
  */
-//@RestController
-@Controller
+@RestController
 
 public class CounterController {
 
@@ -55,7 +54,7 @@ public class CounterController {
    * @return API response json
    */
   @GetMapping(value = "/api/verify")
-  ApiResponse getValue(@RequestParam String data) {
+  String getValue(@RequestParam String data) {
     
     String uid = data.substring(0,14);
     String flag = data.substring(14,15);

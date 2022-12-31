@@ -20,7 +20,8 @@ import java.util.List;
 /**
  * counter控制器
  */
-@RestController
+//@RestController
+@Controller
 
 public class CounterController {
 
@@ -60,7 +61,9 @@ public class CounterController {
     String flag = data.substring(14,15);
     String counter = data.substring(15,21);
     
-    return ApiResponse.ok("uid ="+uid+" flag ="+flag+" counter ="+counter);
+    return "verify";
+    
+    //return ApiResponse.ok("uid ="+uid+" flag ="+flag+" counter ="+counter);
   }
 
 

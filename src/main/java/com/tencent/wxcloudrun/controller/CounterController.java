@@ -37,6 +37,15 @@ public class CounterController {
   }
 
 
+    /**
+   * 获取当前计数
+   * @return API response json
+   */
+  @GetMapping(value = "/api/hello")
+  ApiResponse hello() {
+    return ApiResponse.ok("hello this is ucard");
+  }
+  
   /**
    * 获取当前计数
    * @return API response json
